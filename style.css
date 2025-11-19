@@ -1,0 +1,21 @@
+body{
+    background-color:antiquewhite;
+}
+
+
+h5, .navbar p{
+    color: white;
+}
+
+nav{
+    background-color: black ;
+    display: flex;
+    gap: 20px;
+
+}
+
+.my-name, .about-me, .my-skills, .my-project, .contact {
+    display: flex;
+    margin-bottom: 2%;
+    justify-content: center;
+}
