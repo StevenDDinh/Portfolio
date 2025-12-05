@@ -1,18 +1,40 @@
-html{
-    
+html, body{
+    height: 100%;
+    margin: 0;
+    background-color: #00010D;
 }
 body{
-    background-color:antiquewhite;
-    overflow-y: scroll;
+    display:flex;
+    flex-direction:column;
+}
+main{
+    flex:1;
+}
+header{
+    background-color: #8C8379;
 }
 
+.nom{
+    text-align: center;
+    color:#F2E2CE;
+}
+p{
+    color:#F2E2CE;
+}
 
-h5, .navbar p{
-    color: white;
+.navbar{
+    width: 220px;
+    height: 100vh;
+    flex-direction: column;
+    position: fixed; 
+}
+.navbar p{
+    color: #262626;
+    align-content: center;
 }
 
 nav{
-    background-color: black ;
+    background-color: #F2E2CE ;
     display: flex;
     gap: 20px;
 
@@ -22,13 +44,14 @@ footer{
     width: auto;
 }
 .footer-nav p{
-    color: white;
+    color: #262626;
 }
 
 .my-name, .about-me, .my-skills, .my-project, .contact {
     display: flex;
     margin-bottom: 2%;
     justify-content: center;
+    color:#F2E2CE;
 }
 
 .titre-about-me{
