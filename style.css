@@ -1,5 +1,9 @@
+html{
+    
+}
 body{
     background-color:antiquewhite;
+    overflow-y: scroll;
 }
 
 
@@ -14,8 +18,21 @@ nav{
 
 }
 
+footer{
+    width: auto;
+}
+.footer-nav p{
+    color: white;
+}
+
 .my-name, .about-me, .my-skills, .my-project, .contact {
     display: flex;
     margin-bottom: 2%;
     justify-content: center;
 }
+
+.titre-about-me{
+    text-align: center;
+}
+
+
