@@ -1,44 +1,61 @@
+html, body{
+    height: 100%;
+    margin: 0;
+    background-color: #00010D;
+}
 body{
-    background:linear-gradient(to bottom, antiquewhite, #F4A460);
-    display: block;
+    display:flex;
+    flex-direction:column;
+}
+main{
+    flex:1;
+}
+header{
+    background-color: #8C8379;
 }
 
-img{
-    width: 10%;
+.nom{
+    text-align: center;
+    color:#F2E2CE;
+}
+p{
+    color:#F2E2CE;
 }
 
 .navbar{
-    display: flex;
-    align-items: center;
-    justify-content: start;
+    width: 220px;
+    height: 100vh;
+    flex-direction: column;
+    position: fixed; 
 }
-
-.navbar label{
-    color: white;
-    justify-content: center;
+.navbar p{
+    color: #262626;
+    align-content: center;
 }
 
 nav{
-    background-color: black ;
+    background-color: #F2E2CE ;
     display: flex;
     gap: 20px;
 
+}
+
+footer{
+    width: auto;
+}
+.footer-nav p{
+    color: #262626;
 }
 
 .my-name, .about-me, .my-skills, .my-project, .contact {
     display: flex;
     margin-bottom: 2%;
     justify-content: center;
-    color:black;
-    height: 100vh
+    color:#F2E2CE;
 }
 
-h4{
-    display: flex;
-    justify-content: center;
+.titre-about-me{
+    text-align: center;
 }
 
-.contact h4{
-    color:rgb(160, 159, 159)
-}
 
