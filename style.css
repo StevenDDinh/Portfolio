@@ -101,7 +101,7 @@ main {
 
 .titre-section {
     font-size: 2rem;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
     color: #8C8379;
     border-left: 4px solid #F2E2CE; /* Petite décoration à gauche du titre */
     padding-left: 15px;
@@ -244,7 +244,7 @@ footer {
     align-content: left;
 }
 /* 2. Le Wrapper (La boîte invisible qui tient Photo + Onglets) */
-.profil-layout {
+.profile-layout {
     display: flex;           /* Active le mode ligne (gauche / droite) */
     align-items: center;     /* Centre verticalement (la photo face au milieu de la boite) */
     gap: 50px;               /* Espace entre la photo et la boîte */
