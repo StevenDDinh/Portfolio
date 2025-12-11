@@ -1,10 +1,21 @@
 body{
-    background-color:antiquewhite;
+    background:linear-gradient(to bottom, antiquewhite, #F4A460);
+    display: block;
 }
 
+img{
+    width: 10%;
+}
 
-h5, .navbar p{
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.navbar label{
     color: white;
+    justify-content: center;
 }
 
 nav{
@@ -18,4 +29,16 @@ nav{
     display: flex;
     margin-bottom: 2%;
     justify-content: center;
+    color:black;
+    height: 100vh
 }
+
+h4{
+    display: flex;
+    justify-content: center;
+}
+
+.contact h4{
+    color:rgb(160, 159, 159)
+}
+
