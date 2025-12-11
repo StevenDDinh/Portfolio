@@ -5,72 +5,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet"/>
     <title>Steven Dorée Dinh</title>
+    
 </head>
 
 <body>
-    <header>
-        <h1 class="nom"> Steven Dorée Dinh</h1>
+
+    <header class="hero-section">
+        <h1 class="nom">Steven Dorée Dinh</h1>
+        <p class="subtitle">Bienvenue sur mon portfolio</p>
+        <div class="scroll-indicator">▼ Scroller en bas ▼</div>
     </header>
     
     <nav class="navbar">
-        <p> Home </p>
-        <p> About me</p>
-        <p> My skills</p>
-        <p> My projects</p>
+        <a href="">Accueil</a>
+        <a href="#about">A propos de moi</a>
+        <a href="#skills">Mes compétences</a>
+        <a href="#projects">Mes projets et mes expériences</a>
+        <a href="#contact">Contact</a>
     </nav>
 
-    <main>
-        
-        
-        <section class="about-me">
-            <div>
-                 <h3 class="titre-about-me">About me </h3>
-                 <p> je m'appelle Steven Dorée Dinh. </p>
+    <!--  A PROPOS  -->
+    
+    <section id="profil" >
+        <h3 class="titre-section-profile">Profil</h3>
+
+        <div class="profile-layout">
+            <div class="photo-container">
+                <img class="profile-photo" alt="photo de profil" loading="lazy" src="pedro.jpg">
             </div>
+
+            <div class="profile-container">
+                <div class="tabs-header">
+                    <button class="tab-btn active" onclick="openTab(event, 'bio')">À propos</button>
+                    <button class="tab-btn" onclick="openTab(event, 'formation')">Formations</button>
+                    <button class="tab-btn" onclick="openTab(event, 'experience')">Expérience</button>
+                </div>
+
+                <div id="bio" class="tab-content" style="display: block;">
+                    <h4>Qui suis-je ?</h4>
+                    <p>Je m'appelle Steven Dorée Dinh. Je suis passionné par le développement...</p>
+                    <p>Ajoute ici ton texte de présentation général.</p>
+                </div>
+
+                <div id="formation" class="tab-content">
+                    <h4>Mon parcours scolaire</h4>
+                    <ul>
+                        <li><strong>2023 - Présent :</strong> Formation Développeur...</li>
+                        <li><strong>2020 - 2023 :</strong> Baccalauréat...</li>
+                    </ul>
+                </div>
+
+                <div id="experience" class="tab-content">
+                    <h4>Mon parcours professionnel</h4>
+                    <ul>
+                        <li><strong>Entreprise X :</strong> Description du poste...</li>
+                        <li><strong>Stage Y :</strong> Description des tâches...</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>      
+        <!--  MES COMPETENCES  -->
+        <section id="skills" class="content-section">
+            <h3 class="titre-section">Mes compétences</h3>
             
-        </section>
+            <div class="skills-container">
+                
+                <div class="skills-box">
+                    <h4 class="skill-title">Hard Skills</h4>
+                    <ul>
+                        <li>HTML / CSS</li>
+                        <li>Java</li>
+                        <li>Gestion de projet</li>
+                    </ul>
+                </div>
 
-        <section class="my-skills">
-            <div> 
-                <h3 class="titre-skills">My skills </h3>
-                <p> 
-                    - HTML <br>
-                    - CSS <br>
-                    - JavaScript <br>
-                    - Python <br>
-                    - C# <br>
-                    - SQL
-                </p>
+                <div class="skills-box">
+                    <h4 class="skill-title">Soft Skills</h4>
+                    <ul>
+                        <li>Travail d'équipe</li>
+                        <li>Communication</li>
+                        <li>Résolution de problèmes</li>
+                        <li>Adaptabilité</li>
+                    </ul>
+                </div>
+
             </div>
-        </section>
 
-        <section class="my-project">
-            <div>
-                 <h3 class="titre-projects">My projects</h3> 
-                    <p> - Portfolio personnel <br>
-                        - Application de gestion de tâches <br>
-                        - Site web de e-commerce <br>
-                        - Jeu vidéo simple en C# <br>
-                        - Analyse de données avec Python
-                    </p>
-            </div>
         </section>
-
-        <section class="contact">
-            <div>
-                 <h3 class="titre-projects">My contacts</h3>
-            </div>
-        </section>
-
         
-        
+        <!-- MES PROJETS  -->
+        <section id="projects" class="content-section">
+             <h3 class="titre-section">Mes projets</h3> 
+             <p>Description de tes projets passés...</p>
+        </section>
+
+        <section id="contact" class="content-section">
+             <h3 class="titre-section">Mes contacts</h3>
+             <p>email@example.com</p>
+        </section>
+
     </main>
 
-    <!-- <footer>
-        <nav class="footer-nav">
-            <p> coucou </p>
-        </nav>
-    </footer> -->
+    <footer>
+        <p>© 2023 Steven Dorée Dinh</p>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
