@@ -91,7 +91,7 @@ main {
 
 .titre-section {
     font-size: 2rem;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     color: #8C8379;
     border-left: 4px solid #F2E2CE; /* Petite décoration à gauche du titre */
     padding-left: 15px;
@@ -152,5 +152,144 @@ footer {
 @media (max-width: 768px) {
     .skills-container {
         flex-direction: column; /* Passe de l'horizontale à la verticale */
+    }
+}
+
+/* --- SYSTEME D'ONGLETS (TABS) --- */
+
+/* La barre des boutons en haut */
+.tabs-header {
+    display: flex;
+    background-color: #262626; /* Fond plus sombre pour les onglets inactifs */
+    border-bottom: 1px solid #8C8379;
+}
+
+/* Style des boutons */
+.tab-btn {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 20px;
+    transition: 0.3s;
+    color: #F2E2CE; /* Ta couleur de texte */
+    font-size: 1rem;
+    font-weight: bold;
+    flex: 1; /* Les boutons prennent toute la largeur disponible */
+}
+
+/* Changement de couleur au survol */
+.tab-btn:hover {
+    background-color: rgba(140, 131, 121, 0.3);
+}
+
+/* Style du bouton actif (celui qui est sélectionné) */
+.tab-btn.active {
+    background-color: #8C8379; /* Ta couleur d'accentuation */
+    color: #00010D; /* Texte foncé pour le contraste */
+}
+
+/* Le contenu des onglets */
+.tab-content {
+    display: none; /* Caché par défaut */
+    padding: 20px;
+    animation: fadeEffect 0.5s; /* Petit effet d'apparition */
+}
+.tab-content ul{
+    list-style-type: none;
+}
+
+.tab-content h4 {
+    color: #8C8379;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #8C8379;
+    display: inline-block;
+}
+
+/* Animation d'apparition */
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+/* =========================================
+   SECTION PROFIL (CORRIGÉE)
+   ========================================= */
+
+/* 1. La Section Parente (Le fond qui prend toute la largeur) */
+#profil {
+    width: 100%;
+    display: flex;           
+    flex-direction: column;  /* 1. On empile les éléments verticalement (Titre au-dessus du contenu) */
+    align-items: center;     /* 2. On centre tout horizontalement */
+    padding: 60px 20px;      
+    background-color: #00010D; /* Assure que le fond est bien noir */
+}
+.titre-section-profile {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #8C8379;
+    border-left: 4px solid #F2E2CE; /* Petite décoration à gauche du titre */
+    padding-left: 15px;
+    display:flex;
+    align-content: left;
+}
+/* 2. Le Wrapper (La boîte invisible qui tient Photo + Onglets) */
+.profil-layout {
+    display: flex;           /* Active le mode ligne (gauche / droite) */
+    align-items: center;     /* Centre verticalement (la photo face au milieu de la boite) */
+    gap: 50px;               /* Espace entre la photo et la boîte */
+    width: 100%;             
+    max-width: 1100px;       /* Largeur max pour ne pas trop écarter sur grand écran */
+}
+
+/* 3. La Photo (À GAUCHE) */
+.photo-container {
+    flex-shrink: 0;          /* Empêche la photo de rétrécir */
+    text-align: center;      /* Centre l'image dans son conteneur */
+}
+
+.profile-photo {
+    width: 250px;            /* Taille fixe */
+    height: 250px;          
+    object-fit: cover;       /* Coupe l'image proprement en cercle */
+    border-radius: 50%;     
+    border: 4px solid #8C8379;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Ombre portée */
+}
+
+/* 4. La Boîte à Onglets (À DROITE) */
+.profile-container {
+    flex-grow: 1;            /* Prend tout l'espace restant à droite */
+    border: 1px solid #8C8379;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.05);
+    /* Note : Les styles internes (.tabs-header, .tab-btn) restent inchangés */
+}
+
+
+/* =========================================
+   RESPONSIVE (MOBILE & TABLETTE)
+   ========================================= */
+
+/* On passe en colonne SEULEMENT si l'écran est plus petit que 768px */
+@media (max-width: 768px) {
+    .profil-layout {
+        flex-direction: column; /* On empile verticalement */
+        text-align: center;
+    }
+
+    .photo-container {
+        margin-bottom: 30px;    /* Espace sous la photo */
+        width: 100%;
+    }
+    
+    .profile-photo {
+        width: 200px;           /* Photo un peu plus petite sur mobile */
+        height: 200px;
+    }
+    
+    .profile-container {
+        width: 100%;            /* La boîte prend toute la largeur */
     }
 }
