@@ -1,61 +1,156 @@
-html, body{
-    height: 100%;
+/* Reset basique pour éviter les marges par défaut */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Permet un défilement fluide quand on clique sur le menu */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Une police plus moderne */
     background-color: #00010D;
-}
-body{
-    display:flex;
-    flex-direction:column;
-}
-main{
-    flex:1;
-}
-header{
-    background-color: #8C8379;
+    color: #F2E2CE;
 }
 
-.nom{
-    text-align: center;
-    color:#F2E2CE;
-}
-p{
-    color:#F2E2CE;
-}
-
-.navbar{
-    width: 220px;
-    height: 100vh;
+/* --- PARTIE 1 : HERO SECTION (Plein écran) --- */
+.hero-section {
+    height: 100vh; /* 100% de la hauteur de la fenêtre (Viewport Height) */
+    display: flex;
     flex-direction: column;
-    position: fixed; 
-}
-.navbar p{
-    color: #262626;
-    align-content: center;
-}
-
-nav{
-    background-color: #F2E2CE ;
-    display: flex;
-    gap: 20px;
-
-}
-
-footer{
-    width: auto;
-}
-.footer-nav p{
-    color: #262626;
-}
-
-.my-name, .about-me, .my-skills, .my-project, .contact {
-    display: flex;
-    margin-bottom: 2%;
-    justify-content: center;
-    color:#F2E2CE;
-}
-
-.titre-about-me{
+    justify-content: center; /* Centre verticalement */
+    align-items: center;     /* Centre horizontalement */
+    background-color: #00010D;
     text-align: center;
 }
 
+.nom {
+    font-size: 3rem; /* Gros texte */
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
 
+.subtitle {
+    font-size: 1.2rem;
+    color: #8C8379;
+}
+
+.scroll-indicator {
+    margin-top: 50px;
+    font-size: 2rem;
+    animation: bounce 2s infinite; /* Petite animation de rebond */
+    cursor: pointer;
+}
+
+/* Petite animation pour la flèche */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
+
+/* --- PARTIE 2 : NAVBAR (Sommaire collant) --- */
+.navbar {
+    background-color: #F2E2CE;
+    display: flex;
+    justify-content: center; /* Centre les liens */
+    padding: 15px 0;
+    position: sticky; /* C'est LA clé : la barre reste collée en haut */
+    top: 0;
+    z-index: 1000; /* S'assure que le menu passe au-dessus du reste */
+    border-bottom: 2px solid #8C8379;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #00010D;
+    margin: 0 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #8C8379;
+}
+
+/* --- PARTIE 3 : CONTENU --- */
+main {
+    max-width: 800px;
+    margin: 0 auto; /* Centre le contenu principal */
+    padding: 20px;
+}
+
+.content-section {
+    padding: 60px 20px; /* Espace autour de chaque section */
+    min-height: 50vh;   /* Chaque section prend un peu de place */
+    border-bottom: 1px solid #333; /* Ligne de séparation subtile */
+}
+
+.titre-section {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #8C8379;
+    border-left: 4px solid #F2E2CE; /* Petite décoration à gauche du titre */
+    padding-left: 15px;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #8C8379;
+    color: #00010D;
+    margin-top: 50px;
+}
+
+/* --- NOUVEAU : STYLE DES COMPÉTENCES (GAUCHE / DROITE) --- */
+
+.skills-container {
+    display: flex;          /* Active l'alignement côte à côte */
+    gap: 30px;              /* Espace entre la gauche et la droite */
+    justify-content: center;
+}
+
+.skills-box {
+    flex: 1;                /* Force les deux boîtes à avoir la même largeur */
+    border: 1px solid #8C8379; /* Une bordure subtile aux couleurs de ton thème */
+    padding: 20px;
+    border-radius: 8px;     /* Arrondit légèrement les coins */
+    background-color: rgba(255, 255, 255, 0.05); /* Fond très légèrement plus clair */
+}
+
+.skill-title {
+    color: #F2E2CE;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #8C8379;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.skills-box ul {
+    list-style-type: none; /* Enlève les puces rondes moches par défaut */
+    padding-left: 0;
+    text-align: center;    /* Centre le texte des listes */
+}
+
+.skills-box li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* --- RESPONSIVE : POUR TÉLÉPHONE MOBILE --- */
+/* Si l'écran est plus petit que 768px (tablette/mobile), on empile tout */
+@media (max-width: 768px) {
+    .skills-container {
+        flex-direction: column; /* Passe de l'horizontale à la verticale */
+    }
+}
