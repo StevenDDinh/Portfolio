@@ -6,16 +6,20 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Permet un défilement fluide quand on clique sur le menu */
+    height: 100%;
+    scroll-behavior:smooth; /* Permet un défilement fluide quand on clique sur le menu */
 }
 
 body {
+    min-height: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Une police plus moderne */
     background-color: #00010D;
     color: #F2E2CE;
 }
 
-/* --- PARTIE 1 : HERO SECTION (Plein écran) --- */
+/* =========================================
+   PARTIE HEADER 
+   ========================================= */
 .hero-section {
     height: 100vh; /* 100% de la hauteur de la fenêtre (Viewport Height) */
     display: flex;
@@ -25,16 +29,6 @@ body {
     background-color: #00010D;
     text-align: center;
 } */
-
-
-/* Reset et base */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
 
 .nom {
     font-size: 3rem; /* Gros texte */
@@ -54,14 +48,9 @@ html, body {
     cursor: pointer;
 }
 
-/* Petite animation pour la flèche */
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-    40% {transform: translateY(-10px);}
-    60% {transform: translateY(-5px);}
-}
-
-/* --- PARTIE 2 : NAVBAR (Sommaire collant) --- */
+/* =========================================
+   PARTIE NAVBAR 
+   ========================================= */
 .navbar {
     background-color: #F2E2CE;
     display: flex;
@@ -86,7 +75,9 @@ html, body {
     color: #8C8379;
 }
 
-/* --- PARTIE 3 : CONTENU --- */
+/* =========================================
+   STYLE GENERAL DES SECTIONS
+   ========================================= */
 main {
     max-width: 800px;
     margin: 0 auto; /* Centre le contenu principal */
@@ -120,7 +111,9 @@ footer {
     margin-top: 50px;
 }
 
-/* --- NOUVEAU : STYLE DES COMPÉTENCES (GAUCHE / DROITE) --- */
+/* =========================================
+   SECTION COMPETENCES
+   ========================================= */
 
 .skills-container {
     display: flex;          /* Active l'alignement côte à côte */
@@ -157,72 +150,8 @@ footer {
     font-size: 1.1rem;
 }
 
-/* --- RESPONSIVE : POUR TÉLÉPHONE MOBILE --- */
-/* Si l'écran est plus petit que 768px (tablette/mobile), on empile tout */
-@media (max-width: 768px) {
-    .skills-container {
-        flex-direction: column; /* Passe de l'horizontale à la verticale */
-    }
-}
-
-/* --- SYSTEME D'ONGLETS (TABS) --- */
-
-/* La barre des boutons en haut */
-.tabs-header {
-    display: flex;
-    background-color: #262626; /* Fond plus sombre pour les onglets inactifs */
-    border-bottom: 1px solid #8C8379;
-}
-
-/* Style des boutons */
-.tab-btn {
-    background-color: inherit;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 20px;
-    transition: 0.3s;
-    color: #F2E2CE; /* Ta couleur de texte */
-    font-size: 1rem;
-    font-weight: bold;
-    flex: 1; /* Les boutons prennent toute la largeur disponible */
-}
-
-/* Changement de couleur au survol */
-.tab-btn:hover {
-    background-color: rgba(140, 131, 121, 0.3);
-}
-
-/* Style du bouton actif (celui qui est sélectionné) */
-.tab-btn.active {
-    background-color: #8C8379; /* Ta couleur d'accentuation */
-    color: #00010D; /* Texte foncé pour le contraste */
-}
-
-/* Le contenu des onglets */
-.tab-content {
-    display: none; /* Caché par défaut */
-    padding: 20px;
-    animation: fadeEffect 0.5s; /* Petit effet d'apparition */
-}
-.tab-content ul{
-    list-style-type: none;
-}
-
-.tab-content h4 {
-    color: #8C8379;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #8C8379;
-    display: inline-block;
-}
-
-/* Animation d'apparition */
-@keyframes fadeEffect {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
 /* =========================================
-   SECTION PROFIL (CORRIGÉE)
+   SECTION PROFIL 
    ========================================= */
 
 /* 1. La Section Parente (Le fond qui prend toute la largeur) */
@@ -265,6 +194,7 @@ footer {
     border-radius: 50%;     
     border: 4px solid #8C8379;
     box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Ombre portée */
+    animation: tourner 7s linear infinite; /* Fait tourner la photo en continue */
 }
 
 /* 4. La Boîte à Onglets (À DROITE) */
@@ -277,14 +207,97 @@ footer {
     /* Note : Les styles internes (.tabs-header, .tab-btn) restent inchangés */
 }
 
+/* --- SYSTEME D'ONGLETS (TABS) --- */
+
+/* La barre des boutons en haut */
+.tabs-header {
+    display: flex;
+    background-color: #262626; /* Fond plus sombre pour les onglets inactifs */
+    border-bottom: 1px solid #8C8379;
+}
+
+/* Style des boutons */
+.tab-btn {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 20px;
+    transition: 0.3s;
+    color: #F2E2CE; /* Ta couleur de texte */
+    font-size: 1rem;
+    font-weight: bold;
+    flex: 1; /* Les boutons prennent toute la largeur disponible */
+}
+
+/* Changement de couleur au survol */
+.tab-btn:hover {
+    background-color: rgba(140, 131, 121, 0.3);
+}
+
+/* Style du bouton actif (celui qui est sélectionné) */
+.tab-btn.active {
+    background-color: #8C8379; /* Ta couleur d'accentuation */
+    color: #00010D; /* Texte foncé pour le contraste */
+}
+
+/* Le contenu des onglets */
+.tab-content {
+    display: none; /* Caché par défaut */
+    padding: 20px;
+    animation: fadeEffect 1.5s; /* Petit effet d'apparition */
+}
+.tab-content ul{
+    list-style-type: none;
+}
+
+.tab-content h4 {
+    color: #8C8379;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #8C8379;
+    display: inline-block;
+}
 
 /* =========================================
-   RESPONSIVE (MOBILE & TABLETTE)
+   SECTION CONTACT 
    ========================================= */
+#contact a{
+    color: #FFA500;
+    text-decoration: none;
+    transition: 0.3s;
+}
+#contact a:hover{
+    color: #F2E2CE; /* Devient blanc au survol */
+}
 
-/* On passe en colonne SEULEMENT si l'écran est plus petit que 768px */
+/* =========================================
+   PARTIE ANIMATION
+   ========================================= */
+/* Animation de l'indicateur dans la page d'acceuil */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
+
+/* Dénition de l'animation fadeEffect qu'on appellera pour l'ONGLET*/
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Pour faire tourner la photo en continue */
+@keyframes tourner {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* =========================================
+   PARTIE RESPONSIVE (MOBILE & TABLETTE)
+   ========================================= */
 @media (max-width: 768px) {
-    .profil-layout {
+    /* PARTIE PROFIL  */
+    .profile-layout {
         flex-direction: column; /* On empile verticalement */
         text-align: center;
     }
@@ -302,4 +315,11 @@ footer {
     .profile-container {
         width: 100%;            /* La boîte prend toute la largeur */
     }
+
+    /* PARTIE COMPETNCE */
+    .skills-container {
+        flex-direction: column; /* Passe la section COMPETENCE de l'horizontale à la verticale */
+    }
 }
+
+
