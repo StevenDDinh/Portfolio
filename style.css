@@ -79,7 +79,7 @@ body {
    STYLE GENERAL DES SECTIONS
    ========================================= */
 main {
-    max-width: 800px;
+    max-width: max-content;
     margin: 0 auto; /* Centre le contenu principal */
     padding: 20px;
 }
