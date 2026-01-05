@@ -204,7 +204,9 @@ footer {
     border-radius: 8px;
     overflow: hidden;
     background-color: rgba(255, 255, 255, 0.05);
-    /* Note : Les styles internes (.tabs-header, .tab-btn) restent inchangés */
+    height: 400px;
+    width : 800px;
+    overflow-y: auto;
 }
 
 /* --- SYSTEME D'ONGLETS (TABS) --- */
@@ -257,6 +259,21 @@ footer {
     border-bottom: 1px solid #8C8379;
     display: inline-block;
 }
+
+/* =========================================
+   SECTION PROJET
+   ========================================= */
+
+.section-projet{
+    display: flex;
+    gap: 30px;
+}
+.projet-text
+
+
+
+
+
 
 /* =========================================
    SECTION CONTACT 
