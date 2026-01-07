@@ -268,7 +268,10 @@ footer {
     display: flex;
     gap: 30px;
 }
-.projet-text
+.photo-jobbubby{
+    width: auto;
+    height: 400px;
+}
 
 
 
