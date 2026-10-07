@@ -266,19 +266,36 @@ footer {
    SECTION PROJET
    ========================================= */
 
-.section-projet{
+.section-projet {
     display: flex;
-    gap: 30px;
-}
-.image-section-projet{
-    width: auto;
-    height: 400px;
+    align-items: center;      /* Centre verticalement l'image et le texte */
+    gap: 35px;                /* Espace net entre l'image et le texte */
+    margin-bottom: 20px;
 }
 
+/* L'image prend exactement 45% de la place disponible */
+.image-section-projet {
+    width: 45%;
+    max-width: 450px;         /* Empêche l'image de devenir géante sur très grand écran */
+    height: 260px;            /* Hauteur maîtrisée pour ne pas écraser le reste */
+    object-fit: cover;        /* Recadre proprement sans déformer l'image */
+    border-radius: 8px;
+    border: 1px solid #8C8379;
+    flex-shrink: 0;           /* Empêche l'image de se faire raboter par Flexbox */
+}
 
+/* Le bloc contenant le texte et le bouton prend le reste (55%) */
+.section-projet > div {
+    flex: 1;                  /* Remplit tout l'espace restant */
+    display: flex;
+    flex-direction: column;   /* Empile le texte et le bouton */
+    align-items: flex-start;  /* Aligne le bouton à gauche sous le texte */
+    justify-content: center;
+}
 
-
-
+.section-projet p {
+    margin-bottom: 15px;      /* Crée un bel espace avant le bouton */
+}
 
 /* =========================================
    SECTION CONTACT 
@@ -341,6 +358,26 @@ footer {
     /* PARTIE COMPETNCE */
     .skills-container {
         flex-direction: column; /* Passe la section COMPETENCE de l'horizontale à la verticale */
+    }
+}
+
+@media (max-width: 850px) {
+    /* Si la fenêtre rétrécit en dessous de 850px, on passe en colonne */
+    .section-projet {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .image-section-projet {
+        width: 100%;          /* L'image prend toute la largeur du conteneur */
+        max-width: 100%;
+        height: 220px;        /* Hauteur réduite sur mobile */
+    }
+
+    .section-projet > div {
+        width: 100%;
+        align-items: center;  /* Centre le bouton sous le texte sur mobile */
     }
 }
 
