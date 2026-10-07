@@ -47,7 +47,7 @@
                     <!-- Le profile -->
                     <div id="bio" class="tab-content" style="display: block;">
                         <h4>Qui suis-je ?</h4>
-                        <p>En deuxième année de BUT informatique, je suis quelqu’un qui sais s’organiser et être rigoureux, 
+                        <p>En troisième année de BUT informatique, je suis quelqu’un qui sais s’organiser et être rigoureux, 
                         je cherche à acquérir des compétences et un savoir-faire. Je m’intéresse beaucoup aux technologies 
                         de l’informatique comme les langages de programmation web : HTML, CSS, PHP
                         </p><br>
@@ -93,6 +93,9 @@
                         <li>C++</li>
                         <li>MYSQL</li>
                         <li>Java</li>
+                        <li>Angular</li>
+                        <li>Laravel</li>
+                        <li>Docker</li>
                     </ul>
                 </div>
 
@@ -103,6 +106,7 @@
                         <li>Communication</li>
                         <li>Résolution de problèmes</li>
                         <li>Adaptabilité</li>
+                        <li>Optimisation</li>
                         <li>Methode agile SCRUM</li>
                     </ul>
                 </div>
@@ -112,10 +116,11 @@
         <!-- MES PROJETS  -->
         <section id="projects" class="content-section">
              <h3 class="titre-section">Mes projets</h3> 
+
              <!--Job-buddy-->
              <h4 class="titre-job">Job-buddy</h4><br>
              <div class="section-projet">
-                <img class="photo-jobbubby"src="./images/screenshot-jobbuddy.png" loading="lazy" alt="phopto">
+                <img class="image-section-projet"src="./images/screenshot-jobbuddy.png" loading="lazy" alt="image page d'accueil de Job-buddy">
                 <p> JobBuddy est une application web réalisé dans le cadre de ma formation à l'IUT de Bayonne et du Pays Basque.
                     Elle a pour but de faciliter la recherche de petit boulot court pour les étudiants et aux particuliers qui recherchent de l'aide. 
                     JobBuddy offre une expérience utilisateur fluide et efficace,
@@ -124,21 +129,89 @@
                     une collaboration efficace et une réalisation rapide des fonctionnalités.
                     Nous avons utilisé un modèle d'architecture MVC (Model-View-Controller) pour structurer notre code de manière organisée et maintenable, 
                     avec les technologies suivantes : HTML, CSS, JavaScript pour le frontend, PHP pour le backend et MySQL pour la base de données.
-
                 </p>
+                <button class="btn-details" onclick="openModal('modal-jobbuddy')">En savoir plus</button>
              </div><br>
 
+             <!-- ligne separateur -->
              <hr><br>
 
+             <!-- Tableau OCTIME-->
              <h4>Tableau OCTIME</h4><br>
                 <div class="section-projet">
-                    <img class="photo-jobbubby"src="./images/img-tableau-ts.png" loading="lazy" alt="phopto">
+                    <img class="image-section-projet"src="./images/img-tableau-ts.png" loading="lazy" alt="image d'un tableau réaliser lors d'un stage">
                     <p> Durant mon stage de développement chez OCTIME, j'ai eu l'opportunité de travailler sur une mission qui m'a été confiée. Il s'agissait de développer un tableau de bord pour la gestion des ressources humaines. 
                     Ce projet avait pour objectif de fournir aux clients de l'entreprise une interface permettant de gérer les resources humaines, leurs horaires de travail, leurs congés, etc.
-                    J'ai utilisé mes compétences en développement web pour créer un composant tableau à l'aide d'une librairie nommée <i>Tabulator</i> r, en utilisant des technologies telles que HTML, CSS, typescript et leur WINDEV un logiciel de développement d'application. 
+                    J'ai utilisé mes compétences en développement web pour créer un composant tableau à l'aide d'une librairie nommée <i>Tabulator</i>, en utilisant des technologies telles que HTML, CSS, typescript et leur WINDEV un logiciel de développement d'application. 
                     J'ai également dû travailler en équipe afin de pouvoir intégrer mon tableau à leur projet.
                     </p>
+                    <button class="btn-details" onclick="openModal('modal-octime')">En savoir plus</button>
                 </div>
+
+            <!-- ligne separateur -->
+             <hr><br>
+
+             <!-- Projet ThreeJs -->
+            <h4>Projet ThreeJs</h4><br>
+            <div class = "section-projet">
+                <img class="image-section-projet" src="./images/projet_threejs.gif" loading="lazy" alt="gif d'un projet de modélisation 3d">
+                <p>
+                    Dans le cadre de mon apprentissage en troisième année, j'ai réalisé un projet de modélisation 3D en JavaScript avec la librairie Three.js, dans lequel 
+                    je devais réaliser des formes en 3D plus ou moins complexes à l'aide de Three.js, avec une gestion des lumières et des ombres. De plus, il était demandé 
+                    d'importer des modèles 3D et de faire en sorte que la lumière puisse interagir sur ces éléments et donc de faire apparaître des ombres, mais aussi 
+                    d'ajouter des animations si ces dernières le permettaient.
+                    Durant ce projet, j'ai dû lire la documentation afin de comprendre les différentes méthodes de la librairie pour pouvoir faire les modélisations 
+                    que je souhaitais réaliser. 
+                    Au final, grâce à ce projet, j'ai remarqué que la phase d'apprentissage de la librairie JS a été assez rapide, car je connaissais déjà le langage JavaScript, 
+                    ce qui m'a permis donc de comprendre plus facilement les nombreuses méthodes nécessaires pour réaliser mon projet.
+                </p>
+                <button class="btn-details" onclick="openModal('modal-threejs')">En savoir plus</button>
+            </div>
+
+            <!-- ================= POPUPS / MODALES ================= -->
+
+            <!-- Popup 1 : JobBuddy -->
+            <div id="modal-jobbuddy" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn" onclick="closeModal('modal-jobbuddy')">&times;</span>
+                    <h3>Job-buddy — Détails complets</h3>
+                    <img src="./images/screenshot-jobbuddy.png" alt="Aperçu étendu JobBuddy" class="modal-image">
+                    <p>
+                        Cette application web a été développée par une équipe de 5 étudiants avec la méthode agile <strong>SCRUM</strong>.
+                        L'architecture respecte le modèle <strong>MVC (Modèle-Vue-Contrôleur)</strong> :
+                    </p>
+                    <ul class="modal-list">
+                        <li><strong>Frontend :</strong> HTML5, CSS3, JavaScript</li>
+                        <li><strong>Backend :</strong> PHP natif et architecture MVC</li>
+                        <li><strong>Base de données :</strong> MySQL avec gestion relationnelle complète</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Popup 2 : OCTIME -->
+            <div id="modal-octime" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn" onclick="closeModal('modal-octime')">&times;</span>
+                    <h3>Tableau RH OCTIME — Détails complets</h3>
+                    <img src="./images/img-tableau-ts.png" alt="Aperçu tableau OCTIME" class="modal-image">
+                    <p>
+                        Intégration et personnalisation d'un composant de tableau interactif avec <strong>Tabulator</strong> et <strong>TypeScript</strong>.
+                        Le module a été relié aux interfaces existantes développées sous WINDEV.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Popup 3 : ThreeJs -->
+            <div id="modal-threejs" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn" onclick="closeModal('modal-threejs')">&times;</span>
+                    <h3>Projet Three.js — Modélisation 3D</h3>
+                    <img src="./images/preuves/threejs_preuve.png" alt="Animation 3D Three.js" class="modal-image">
+                    <p>
+                        Exploration approfondie du rendu WebGL à travers Three.js : configuration de caméras orbitales, calculs des ombres portées (shadow maps) et importation de maillages 3D animés.
+                    </p>
+                </div>
+            </div>
         </section>
 
         <!-- MES CONTACTS  -->

@@ -20,3 +20,30 @@
         // 5. On ajoute la classe "active" au bouton sur lequel on a cliqué
         evt.currentTarget.className += " active";
     }
+
+
+    // Ouvre la modale ciblée par son identifiant
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden"; // Empêche la page de défiler derrière
+    }
+}
+
+// Ferme la modale ciblée
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto"; // Réactive le défilement
+    }
+}
+
+// Ferme la modale si l'utilisateur clique en dehors de la boîte
+window.addEventListener("click", function(event) {
+    if (event.target.classList.contains("modal")) {
+        event.target.style.display = "none";
+        document.body.style.overflow = "auto";
+    }
+});

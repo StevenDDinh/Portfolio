@@ -143,6 +143,8 @@ footer {
     list-style-type: none; /* Enlève les puces rondes moches par défaut */
     padding-left: 0;
     text-align: center;    /* Centre le texte des listes */
+    /* mettre sur deux colonnes*/
+    column-count: 2;
 }
 
 .skills-box li {
@@ -268,14 +270,11 @@ footer {
     display: flex;
     gap: 30px;
 }
-.photo-jobbubby{
+.image-section-projet{
     width: auto;
     height: 400px;
 }
 
-.titre-job{
-    
-}
 
 
 
@@ -346,3 +345,100 @@ footer {
 }
 
 
+/* =========================================
+   BOUTON OUVERTURE ET POPUPS (MODALES)
+   ========================================= */
+
+/* Bouton pour ouvrir la popup */
+.btn-details {
+    margin-top: 15px;
+    padding: 10px 18px;
+    background-color: transparent;
+    color: #F2E2CE;
+    border: 1px solid #8C8379;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-details:hover {
+    background-color: #8C8379;
+    color: #00010D;
+}
+
+/* Arrière-plan sombre (couvre tout l'écran) */
+.modal {
+    display: none; /* Masqué par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 1, 13, 0.75); /* Noir translucide */
+    backdrop-filter: blur(4px);             /* Léger flou d'arrière-plan */
+    z-index: 2000;                          /* Passe au-dessus de la navbar */
+}
+
+/* Boîte centrale de la popup */
+.modal-content {
+    background-color: #0b0c16;
+    border: 1px solid #8C8379;
+    border-radius: 10px;
+    color: #F2E2CE;
+    width: 90%;
+    max-width: 650px;
+    margin: 5vh auto;
+    padding: 25px 30px;
+    max-height: 85vh;
+    overflow-y: auto;                      /* Défilement si le texte est long */
+    position: relative;
+    animation: apparitionModal 0.25s ease-out;
+}
+
+/* Croix de fermeture */
+.close-btn {
+    position: absolute;
+    top: 14px;
+    right: 20px;
+    font-size: 1.8rem;
+    color: #8C8379;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: #F2E2CE;
+}
+
+/* Image à l'intérieur de la popup */
+.modal-image {
+    width: 100%;
+    max-height: 280px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #8C8379;
+    margin: 15px 0;
+}
+
+.modal-list {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.modal-list li {
+    margin-bottom: 6px;
+}
+
+/* Animation douce d'ouverture */
+@keyframes apparitionModal {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
